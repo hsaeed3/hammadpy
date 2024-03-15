@@ -1,4 +1,4 @@
-from hammadcore.modules.text import Text
+from hammadpy.modules.text import Text
 import threading
 import time
 

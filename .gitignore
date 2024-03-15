@@ -1,8 +1,10 @@
 /__dev
-__PyPi - Release/hammad-python/*.egg-info/
-__PyPi - Release/hammad-python/dist/
-__PyPi - Release/hammad-python/hammad_python.egg-info/
-__PyPi - Release/hammad-python/__pycache__/
+
+__PyPi - Release/hammad-python/hammadpy/*.egg-info/
+__PyPi - Release/hammad-python/hammadpy/dist/
+__PyPi - Release/hammad-python/hammadpy.egg-info/
+__PyPi - Release/hammad-python/hammadpy/__pycache__/
+__PyPi - Release/hammad-python/hammadpy/modules/__pycache__/
 __PyPi - Release/hammad-ml/*.egg-info/
 __PyPi - Release/hammad-ml/dist/
 __PyPi - Release/hammad-ml/hammad_ml.egg-info/

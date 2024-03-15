@@ -19,5 +19,7 @@ Hammad's Accelarated Micro Modules for Application Development (Hammad's Python 
     install_requires=[
 "art",
 "libhammadpy-text",
+"prompt_toolkit",
+"wcwidth",
     ]
 )

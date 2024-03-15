@@ -1,5 +1,6 @@
-from hammadcore.modules.text import Text
-from hammadcore.modules.loaders import Status, Timer
+from hammadpy.modules.text import Text
+from hammadpy.modules.loaders import Status, Timer
+from hammadpy.modules.inputs import Input
 
 """
 hammadpy.core.core
@@ -33,6 +34,9 @@ class Core:
         self.status = Status
         self.timer = Timer
 
+        # Inputs
+        self.inputs = Input()
+
         pass
 
 if __name__ == "__main__":
@@ -63,3 +67,7 @@ if __name__ == "__main__":
         time.sleep(2)
         pass
 
+    
+    # Inputs
+    core.inputs.pause()
+    core.inputs.confirm("Do you want to continue?")
