@@ -1,0 +1,3 @@
+hammadpy>=3.0.1
+pandas
+Whoosh

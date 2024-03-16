@@ -1,0 +1,7 @@
+setup.py
+hammadml/__init__.py
+hammadml.egg-info/PKG-INFO
+hammadml.egg-info/SOURCES.txt
+hammadml.egg-info/dependency_links.txt
+hammadml.egg-info/requires.txt
+hammadml.egg-info/top_level.txt

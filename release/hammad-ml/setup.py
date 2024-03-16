@@ -5,9 +5,9 @@ setuptools.setup(
     version="0.0.1",
     author="Hammad Saeed",
     author_email="hammad@supportvectors.com",
-    description="Hammad's Accelarated Micro Modules for Application Development (Hammad's Python Library)",
+    description="ML",
     long_description="""
-Hammad's Accelarated Micro Modules for Application Development (Hammad's Python Library)
+ML
     """,
     packages=setuptools.find_packages(),
     classifiers=[
@@ -18,5 +18,8 @@ Hammad's Accelarated Micro Modules for Application Development (Hammad's Python 
     python_requires='>3.9',
     install_requires=[
 "hammadpy>=3.0.1",
+'pandas',
+'pathlib',
+"Whoosh",
     ]
 )
