@@ -1,0 +1,7 @@
+pandas
+fastparquet
+dask
+uuid
+colorama
+pathlib
+numpy

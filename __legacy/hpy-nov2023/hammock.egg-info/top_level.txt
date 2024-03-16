@@ -1,0 +1,2 @@
+hammock_core
+hamplify_core

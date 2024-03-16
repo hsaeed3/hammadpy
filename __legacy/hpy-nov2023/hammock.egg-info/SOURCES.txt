@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+hammock.egg-info/PKG-INFO
+hammock.egg-info/SOURCES.txt
+hammock.egg-info/dependency_links.txt
+hammock.egg-info/requires.txt
+hammock.egg-info/top_level.txt
+hammock_core/__init__.py
+hammock_core/core.py
+hamplify_core/__init__.py
+hamplify_core/core.py
