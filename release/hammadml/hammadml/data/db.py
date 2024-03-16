@@ -155,7 +155,7 @@ class Database:
             try:
                 q = parser.parse(query)
                 results = searcher.search(q)
-                return results
+                return [{"id": hit["id"], "content": hit["content"]} for hit in results]
             except QueryParserError as e:
                 return self.text.say(message=f"QueryParserError: {e}", color="red", bold=True)
     

@@ -74,6 +74,7 @@ class VectorDatabase:
     def create_from_database(self, db_path: str, model_name: str = "all-MiniLM-L6-v2", num_trees: int = 10):
         self.db = Database()
         self.db.load(db_path)
+        self.chunker = Chunker()
         embedder = Embedder(model_name)
         
         self.sentences = []
@@ -81,9 +82,16 @@ class VectorDatabase:
         self.vectors = []
         
         for doc in self.db.ix.searcher().documents():
-            self.sentences.append(doc["content"])
-            self.document_ids.append(doc["id"])
-            self.vectors.append(embedder.embed([doc["content"]])[0][1])
+            doc_id = doc["id"]
+            doc_content = doc["content"]
+            
+            chunks = self.chunker.chunk_text(doc_content)
+            for chunk in chunks:
+                self.sentences.append(chunk)
+                self.document_ids.append(doc_id)
+                
+                vector = embedder.embed([chunk])[0][1]
+                self.vectors.append(vector)
         
         if not self.dimension:
             self.dimension = len(self.vectors[0])
@@ -122,48 +130,3 @@ class VectorDatabase:
             vector = self.index.get_item_vector(index)
             results.append((index, sentence, document_id, vector))
         return results
-
-if __name__ == "__main__":
-    # Example 1: Create a vector database from a list of sentences
-    sentences = [
-        "This is the first sentence.",
-        "This is the second sentence.",
-        "This is the third sentence.",
-        "This is the fourth sentence.",
-        "This is the fifth sentence."
-    ]
-
-    vdb_sentences = VectorDatabase()
-    vdb_sentences.create(sentences)
-
-    search_query = "third"
-    search_results = vdb_sentences.search(search_query)
-
-    print("Example 1: Search results for a list of sentences")
-    print(f"Search query: '{search_query}'")
-    for index, sentence, document_id, _ in search_results:
-        print(f"Index: {index}")
-        print(f"Document ID: {document_id}")
-        print(f"Sentence: {sentence}")
-        print()
-
-    # Example 2: Create a vector database from loaded documents
-    """
-    db = Database()
-    db.create()
-    db.load_docs("./data")
-
-    vdb_docs = VectorDatabase()
-    vdb_docs.create_from_database("./databases/db")
-
-    search_query = "test"
-    search_results = vdb_docs.search_database(search_query)
-
-    print("Example 2: Search results for loaded documents")
-    print(f"Search query: '{search_query}'")
-    for index, sentence, document_id, _ in search_results:
-        print(f"Index: {index}")
-        print(f"Document ID: {document_id}")
-        print(f"Sentence: {sentence}")
-        print()
-    """
