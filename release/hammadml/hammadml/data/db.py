@@ -90,8 +90,9 @@ class Database:
         Returns:
             None
         """
+        self.ix = None
         if not self.ix:
-            self.create()
+            self.create(schema=Schema(id=ID(stored=True), title=TEXT(stored=True), content=TEXT(stored=True)))
         if not pl.Path(dir).exists():
             return self.text.say(message=f"Directory {dir} does not exist.", color="red", bold=True)
 
