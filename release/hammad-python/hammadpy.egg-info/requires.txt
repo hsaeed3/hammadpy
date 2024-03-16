@@ -1,4 +1,0 @@
-art
-libhammadpy_text
-prompt_toolkit
-wcwidth

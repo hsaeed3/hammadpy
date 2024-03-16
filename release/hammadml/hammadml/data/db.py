@@ -1,38 +1,35 @@
-from hammadpy.core import Text
+from typing import Optional, List, Dict
+import pathlib as pl
+import uuid
 from whoosh import index as whoosh_index
 from whoosh.analysis import StandardAnalyzer, FancyAnalyzer, LanguageAnalyzer, KeywordAnalyzer
 from whoosh.fields import Schema, TEXT, ID, KEYWORD
 from whoosh.qparser import QueryParser, QueryParserError, MultifieldParser
 import pandas as pd
-from typing import Optional, List, Dict
-import pathlib as pl
-import uuid
-
-"""
-hammadml.data.db
-Author: Hammad Saeed
-Contact: hammad@supportvectors.com
-Website: python.hammad.fun
-
-This module contains the Database class which provides a simple interface for creating and searching a Whoosh search index.
-
-Classes:
-    Database: This class provides a simple interface for creating and searching a Whoosh search index.
-
-Methods:
-    create(self, dir: Optional[str] = None, schema: Optional[Schema] = None, analyzer: Optional[str] = "standard"): Creates a new index.
-    add(self, documents: List[Dict[str, str]], shared_id: Optional[bool] = False): Adds documents to the index.
-    search(self, query: str, fields: Optional[List[str]] = None): Searches the index.
-"""
-
-#==============================================================================#
+from hammadpy.core import Text
+from PyPDF2 import PdfReader
+from ebooklib import epub
 
 class Database:
     def __init__(self):
-        """
-        Initializes the search index.
-        """
         self.text = Text()
+        self.ix = None
+        self.schema = None
+        self.index_dir = None
+
+    def load(self, dir: str):
+        """
+        Loads an existing index.
+
+        Args:
+            dir (str): Path to the index directory.
+        """
+        self.index_dir = dir
+        if not pl.Path(self.index_dir).exists():
+            return self.text.say(message=f"Index directory {self.index_dir} does not exist.", color="red", bold=True)
+        if not whoosh_index.exists_in(self.index_dir):
+            return self.text.say(message=f"Index does not exist in directory {self.index_dir}.", color="red", bold=True)
+        self.ix = whoosh_index.open_dir(self.index_dir)
 
     def create(self, dir: Optional[str] = None, schema: Optional[Schema] = None, analyzer: Optional[str] = "standard"):
         """
@@ -83,14 +80,37 @@ class Database:
             writer.add_document(id=row[id_column], content=row[content_column])
         writer.commit()
 
-    def load_docs(self, dir: str, type: str):
+    def load_docs(self, dir: str):
         """
-        Adds documents to an index, by reading a directory of files.
+        Adds documents to an index, by reading text files from a directory.
 
         Args:
-            dir (str): The directory to read from.
-            type (str): The type of documents to read. Options are "txt", "pdf".
+            dir (str): The path to the directory containing the text files.
+
+        Returns:
+            None
         """
+        if not self.ix:
+            self.create()
+        if not pl.Path(dir).exists():
+            return self.text.say(message=f"Directory {dir} does not exist.", color="red", bold=True)
+
+        writer = self.ix.writer()
+        for file_path in pl.Path(dir).glob("*"):
+            if file_path.suffix == ".txt":
+                with open(file_path, "r", encoding="utf-8") as file:
+                    content = file.read()
+                    writer.add_document(id=str(uuid.uuid4()), title=file_path.stem, content=content)
+            elif file_path.suffix == ".pdf":
+                with open(file_path, "rb") as file:
+                    reader = PdfReader(file)
+                    content = " ".join(page.extract_text() for page in reader.pages)
+                    writer.add_document(id=str(uuid.uuid4()), title=file_path.stem, content=content)
+            elif file_path.suffix == ".epub":
+                book = epub.read_epub(file_path)
+                content = " ".join(item.get_content().decode("utf-8") for item in book.get_items_of_type(9))
+                writer.add_document(id=str(uuid.uuid4()), title=book.get_metadata("DC", "title")[0][0], content=content)
+        writer.commit()
 
     def add(self, documents: List[Dict[str, str]], shared_id: Optional[bool] = False):
         """
@@ -145,4 +165,5 @@ if __name__ == "__main__":
     db = Database()
     db.create()
     db.add([{"content": "This is a test document."}, {"content": "This is another test document."}])
-    db.search("test")
+    results = db.search("test")
+    print(results)

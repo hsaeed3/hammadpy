@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="hammadml",
-    version="0.0.1",
+    version="0.1.0",
     author="Hammad Saeed",
     author_email="hammad@supportvectors.com",
     description="ML",
@@ -18,8 +18,15 @@ ML
     python_requires='>3.9',
     install_requires=[
 "hammadpy>=3.0.1",
+'annoy',
+'ebooklib',
+'instructor',
 'pandas',
 'pathlib',
+'pdfminer.six',
+'PyPDF2',
+'sentence-transformers',
+'spacy',
 "Whoosh",
     ]
 )
