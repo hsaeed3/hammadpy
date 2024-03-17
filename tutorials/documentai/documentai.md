@@ -1,7 +1,7 @@
 
 # *'One Script/Class'* Document AI (RAG) w/ hammadml
 
-*The hammadml docAI pipeline is built off using incredibly well designed python packages*<br>
+*The hammadml docAI pipeline is built using incredibly well designed python packages*<br>
 **Annoy** | [Approximate Nearest Neighbors in C++/Python](https://github.com/spotify/annoy)<br>
 **Instructor** | [Structured Outputs for LLMs](https://github.com/jxnl/instructor)<br>
 **Sentence-Transformers** | [Multilingual Sentence & Image Embeddings with BERT](https://github.com/UKPLab/sentence-transformers)<br>
