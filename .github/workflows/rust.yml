@@ -21,7 +21,7 @@ jobs:
         override: true
 
     - name: libhammadpy_rust
-      run: cargo build --verbose --release --out dist
+      run: cargo build --verbose --release
       working-directory: release/rust-libhammadpy/libhammadpy_text
 
     - name: Run tests
