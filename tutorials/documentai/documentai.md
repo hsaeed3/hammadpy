@@ -1,4 +1,6 @@
 
+[**hammad python**](https://github.com/hsaeed3/hammadpy)
+
 # *'One Script/Class'* Document AI (RAG) w/ hammadml
 
 *The hammadml docAI pipeline is built using incredibly well designed python packages*<br>
