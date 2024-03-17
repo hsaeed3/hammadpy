@@ -1,6 +1,6 @@
 from hammadpy.modules.text import Text
 from hammadpy.modules.loaders import Status, Timer
-from hammadpy.modules.inputs import Input
+from hammadpy.modules.inputs import Input, Dialog
 
 """
 hammadpy.core.core
@@ -36,6 +36,9 @@ class Core:
 
         # Inputs
         self.inputs = Input()
+
+        # Dialogs
+        self.dialog = Dialog
 
         pass
 

@@ -6,13 +6,11 @@ from whoosh.analysis import StandardAnalyzer, FancyAnalyzer, LanguageAnalyzer, K
 from whoosh.fields import Schema, TEXT, ID, KEYWORD
 from whoosh.qparser import QueryParser, QueryParserError, MultifieldParser
 import pandas as pd
-from hammadpy.core import Text
 from PyPDF2 import PdfReader
 from ebooklib import epub
 
 class Database:
     def __init__(self):
-        self.text = Text()
         self.ix = None
         self.schema = None
         self.index_dir = None

@@ -1,6 +1,5 @@
 from hammadml.text.util import Embedder, Chunker
 from hammadml.data.db import Database
-from hammadpy.core import Text
 from typing import Union, List, Tuple, Optional
 import os
 import uuid
@@ -8,7 +7,6 @@ from annoy import AnnoyIndex
 
 class VectorDatabase:
     def __init__(self, dimension: Optional[int] = None):
-        self.text = Text()
         self.index = None
         self.dimension = dimension
         self.document_ids = []
