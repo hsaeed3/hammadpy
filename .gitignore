@@ -2,12 +2,10 @@
 .conda
 
 release/hammadpy/hammadpy/*.egg-info/
-release/hammadpy/hammadpy/dist/
 release/hammadpy/hammadpy.egg-info/
 release/hammadpy/hammadpy/__pycache__/
 release/hammadpy/hammadpy/modules/__pycache__/
 release/hammadml/*.egg-info/
-release/hammadml/dist/
 release/hammadml/hammad_ml.egg-info/
 release/hammadml/hammadml/__pycache__/
 release/hammadml/databases/
