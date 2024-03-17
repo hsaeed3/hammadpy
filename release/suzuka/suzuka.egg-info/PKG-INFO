@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: suzuka
+Version: 0.0.1
+Summary: ML
+Author: Hammad Saeed
+Author-email: hammad@supportvectors.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.9
+Requires-Dist: annoy
+Requires-Dist: anthropic
+Requires-Dist: ebooklib
+Requires-Dist: instructor
+Requires-Dist: pandas
+Requires-Dist: pathlib
+Requires-Dist: pdfminer.six
+Requires-Dist: PyPDF2
+Requires-Dist: sentence-transformers
+Requires-Dist: spacy
+Requires-Dist: Whoosh
+
+
+ML
+    

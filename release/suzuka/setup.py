@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name="hammadml",
-    version="0.1.10",
+    name="suzuka",
+    version="0.0.1",
     author="Hammad Saeed",
     author_email="hammad@supportvectors.com",
     description="ML",

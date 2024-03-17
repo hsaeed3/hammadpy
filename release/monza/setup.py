@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name="hammadpy",
-    version="3.10.1",
+    name="monza",
+    version="0.0.1",
     author="Hammad Saeed",
     author_email="hammad@supportvectors.com",
     description="Hammad's Accelarated Micro Modules for Application Development (Hammad's Python Library)",

@@ -1,0 +1,11 @@
+annoy
+anthropic
+ebooklib
+instructor
+pandas
+pathlib
+pdfminer.six
+PyPDF2
+sentence-transformers
+spacy
+Whoosh

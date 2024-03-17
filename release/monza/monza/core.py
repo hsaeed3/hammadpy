@@ -1,12 +1,12 @@
-from hammadpy.modules.text import Text
-from hammadpy.modules.loaders import Status, Timer
-from hammadpy.modules.inputs import Input, Dialog
+from monza.modules.text import Text
+from monza.modules.loaders import Status, Timer
+from monza.modules.inputs import Input, Dialog
 
 """
-hammadpy.core.core
+monza.core.core
 
-The core module for the hammadpy package. Contains base hammadpy tools, and all
-hammadpy-sm tools.
+The core module for the monza package. Contains base monza tools, and all
+monza-sm tools.
 
 Example:
     core = Core()
@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
     core = Core()
     # Text Styling
-    core.art(message="hammadpy", art="random", color=rgb)
+    core.art(message="monza", art="random", color=rgb)
     time.sleep(1)
     core.say("This has an underline!", underline=True)
     core.say("This is ITALIC!", italic=True)
