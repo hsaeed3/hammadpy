@@ -18,7 +18,12 @@ ___
 
 This guide provides a quick overview & tutorial, using hammadml to create a fast Document AI pipeline. This pipeline is not meant for production/enterprise use, but rather for rapid development and prototyping. It is also very much in early access/beta, so there are a few funky issues here & there that need to be addressed.
 
-This tutorial is best followed using the provided example script and documents. Run ```git clone https://github.com/hsaeed3/hammadpy/``` for a quick start. 
+This tutorial is best followed using the provided example script and documents. Run the following cell for a quick start, if you havent cloned the repository. 
+
+```bash
+git clone https://github.com/hsaeed3/hammadpy/
+cd hammadpy/tutorials/documentai/
+```
 
 ```zsh
 pip install hammadml>=0.1.10 --upgrade
