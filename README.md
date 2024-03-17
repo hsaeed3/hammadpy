@@ -21,4 +21,4 @@ git clone https://github.com/hsaeed3/hammadpy
 cd hammadpy
 ```
 
-[**'One Class' DocumentAI (RAG)**]()
+[**'One Class' DocumentAI (RAG)**](https://github.com/hsaeed3/hammadpy/blob/main/tutorials/documentai/documentai.md)
