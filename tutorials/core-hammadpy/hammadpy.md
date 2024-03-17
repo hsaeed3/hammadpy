@@ -4,3 +4,5 @@ The hammadpy library is now a very small library, with classes & functions slowl
 ```bash
 pip install hammadpy>=3.10.1
 ```
+
+The provided example scripts in this directory underline the core utility in hammadpy.
