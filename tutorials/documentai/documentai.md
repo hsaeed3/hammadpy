@@ -132,9 +132,11 @@ from hammadml.data import Database
 ```
 
 ```python
+
 database = Database()
 
 database.load_docs(dir='docs')
+
 ```
 
 ```python
@@ -179,8 +181,11 @@ from hammadml.data import VectorDatabase
 ```
 
 ```python
+
 vectordb = VectorDatabase()
+
 vectordb.create_from_database("databases/db") # The database path created by the earlier code blocks.
+
 ```
 
 The ```.search()``` functionality in the ```VectorDatabase``` is properly structured for vector search, and vectorizes the query through SentenceTransformers before performing ANN (Approximate Nearest Neighbors) search.
@@ -203,7 +208,7 @@ for result in results:
 >(1627, "Mater didn't get to say goodbye.", '24007732-13ea-41d1-83bf-5cbdac81ff04', [0.109908826649189, >-0.027151046320796013, 0.1038813591003418, 0.01063409261405468, 0.04608910158276558,
 
 
-As you may be able to tell, line breaks are not properly stripped from the text. Well boo-hoo, do something yourself. Just kidding, modular text NLP processing for individual docs/chunks straight inside both the ```Database``` & ```VectorDatabase```; including **Customizable long document cleaning & Greater control during the chunking period of the VectorDatabase. 
+As you may be able to tell, line breaks are not properly stripped from the text. Well boo-hoo, do something yourself. Just kidding, modular text NLP processing for individual docs/chunks straight inside both the ```Database``` & ```VectorDatabase```; including *Customizable long document cleaning & Greater control during the chunking period of the VectorDatabase.*
 
 ___
 
