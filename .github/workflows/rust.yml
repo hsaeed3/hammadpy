@@ -22,8 +22,8 @@ jobs:
 
     - name: libhammadpy_rust
       run: cargo build --verbose
-      working-directory: release/rust-libhammadpy/libhammadpy_rust/
+      working-directory: release/rust-libhammadpy/libhammadpy_text
 
     - name: Run tests
       run: cargo test --verbose
-      working-directory: release/rust-libhammadpy/libhammadpy_rust/
+      working-directory: release/rust-libhammadpy/libhammadpy_text
