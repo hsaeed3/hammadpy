@@ -135,7 +135,7 @@ from hammadml.data import Database
 
 database = Database()
 
-database.load_docs(dir='docs')
+database.load_docs(dir='docs')    # Using the provided documents in hammadpy/tutorials/documentai/docs
 
 ```
 
