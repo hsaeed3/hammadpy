@@ -207,9 +207,14 @@ Now that we have both our database and vector database results, we can rank them
 
 ```python
 from hammadml.text import CrossEncoder
+```
 
-query = "Who is tow mater?"
+```python
 encoder = CrossEncoder()
+query = "Who is tow mater?"
+```
+
+```python
 db_results = database.search(query=query)
 vectordb_results = vectordb.search(query=query)
 ranked_results = encoder.rank(query=query, x=db_results, y=vectordb_results)
@@ -246,7 +251,9 @@ Now that the system prompt has been built; the completion can be generated. Curr
 
 ```python
 from hammadml.llms import Instructor   # or 'Anthropic'
+```
 
+```python
 llm = Instructor() # If key is blank, the OPENAI_API_KEY environment variable will be used.
 # You can use llm = Instructor(api_key="YOUR_API_KEY") as well
 
