@@ -13,6 +13,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Maturin
+      run: pip install maturin
+
     - name: Set up libhammadpy_rust
       uses: actions-rs/toolchain@v1
       with:
@@ -20,10 +28,11 @@ jobs:
         toolchain: stable
         override: true
 
-    - name: libhammadpy_rust
-      run: cargo build --verbose --release
+    - name: Build with Maturin
+      run: maturin build --release --out dist
       working-directory: release/rust-libhammadpy/libhammadpy_text
 
+    # Assuming tests are compatible with Maturin. If not, you might need a different approach for running tests.
     - name: Run tests
-      run: cargo test --verbose
+      run: maturin test
       working-directory: release/rust-libhammadpy/libhammadpy_text
