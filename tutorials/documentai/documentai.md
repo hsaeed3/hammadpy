@@ -180,7 +180,6 @@ from hammadml.data import VectorDatabase
 
 ```python
 vectordb = VectorDatabase()
-
 vectordb.create_from_database("databases/db") # The database path created by the earlier code blocks.
 ```
 
