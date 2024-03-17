@@ -1,5 +1,5 @@
 ```python
-pip install hammadpy>=3.10
+pip install hammadpy>=3.10.1
 pip install hammadml>=0.1.10
 ```
 
@@ -21,4 +21,5 @@ git clone https://github.com/hsaeed3/hammadpy
 cd hammadpy
 ```
 
+[**Core Utility**](https://github.com/hsaeed3/hammadpy/blob/main/tutorials/core-hammadpy/hammadpy.md)<br>
 [**'One Class' DocumentAI (RAG)**](https://github.com/hsaeed3/hammadpy/blob/main/tutorials/documentai/documentai.md)
