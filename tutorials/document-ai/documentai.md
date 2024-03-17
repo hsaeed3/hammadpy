@@ -5,10 +5,10 @@ This guide provides a quick overview & tutorial, using hammadml to create a fast
 production/enterprise use, but rather for rapid development and prototyping.
 
 ```zsh
-pip install hammadml>=0.1.6
+    pip install hammadml>=0.1.6
 ```
 
 ```zsh
-# Optional, not required for this use case.
-pip install hammadpy>=3.10
+    pip install hammadpy>=3.10
 ```
+
