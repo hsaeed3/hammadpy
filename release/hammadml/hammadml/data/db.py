@@ -24,9 +24,9 @@ class Database:
         """
         self.index_dir = dir
         if not pl.Path(self.index_dir).exists():
-            return self.text.say(message=f"Index directory {self.index_dir} does not exist.", color="red", bold=True)
+            return print(f"Index directory {self.index_dir} does not exist.")
         if not whoosh_index.exists_in(self.index_dir):
-            return self.text.say(message=f"Index does not exist in directory {self.index_dir}.", color="red", bold=True)
+            return print(f"Index does not exist in directory {self.index_dir}.")
         self.ix = whoosh_index.open_dir(self.index_dir)
 
     def create(self, dir: Optional[str] = None, schema: Optional[Schema] = None, analyzer: Optional[str] = "standard"):
@@ -92,7 +92,7 @@ class Database:
         if not self.ix:
             self.create(schema=Schema(id=ID(stored=True), title=TEXT(stored=True), content=TEXT(stored=True)))
         if not pl.Path(dir).exists():
-            return self.text.say(message=f"Directory {dir} does not exist.", color="red", bold=True)
+            return print(f"Directory {dir} does not exist.")
 
         writer = self.ix.writer()
         for file_path in pl.Path(dir).glob("*"):
@@ -155,7 +155,7 @@ class Database:
                 results = searcher.search(q)
                 return [{"id": hit["id"], "content": hit["content"]} for hit in results]
             except QueryParserError as e:
-                return self.text.say(message=f"QueryParserError: {e}", color="red", bold=True)
+                return print(f"QueryParserError: {e}")
     
 #==============================================================================#
     

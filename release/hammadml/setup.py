@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="hammadml",
-    version="0.1.6",
+    version="0.1.10",
     author="Hammad Saeed",
     author_email="hammad@supportvectors.com",
     description="ML",

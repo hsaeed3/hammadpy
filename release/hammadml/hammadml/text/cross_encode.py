@@ -33,6 +33,16 @@ class CrossEncode:
         List[Tuple[str, str, float]]
             A list of ranked pairs with their scores
         """
+        if not x:
+            return [(y_item, 0) for y_item in y]
+        if not y:
+            return [(x_item, 0) for x_item in x]
+
+        if len(x) == 1:
+            x = x * len(y)
+        if len(y) == 1:
+            y = y * len(x)
+            
         min_length = min(len(x), len(y))
         x = x[:min_length]
         y = y[:min_length]
