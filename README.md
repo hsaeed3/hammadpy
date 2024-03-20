@@ -19,5 +19,5 @@ cd hammadpy
 
 ### Get Started
 
-- [**Core Utility**](https://github.com/hsaeed3/hammadpy/blob/main/tutorials/core-hammadpy/hammadpy.md)<br>
+- [**hammadpy Core Utility**](https://github.com/hsaeed3/hammadpy/blob/main/tutorials/core-hammadpy/hammadpy.md)<br>
 - [**'One Class' DocumentAI (RAG)**](https://github.com/hsaeed3/hammadpy/blob/main/tutorials/documentai/documentai.md)
