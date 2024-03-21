@@ -4,7 +4,7 @@
 The complete library can be installed with the following command; the new GitHub Repository will be updated soon. However for now, this current repository and its examples reference the two libraries below.
 
 ```bash
-pip install 'monza[ml]'
+pip install 'forza[ml]'
 ```
 
 ```python
