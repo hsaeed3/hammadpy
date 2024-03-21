@@ -1,3 +1,12 @@
+
+## NOTE
+
+The complete library can be installed with the following command; the new GitHub Repository will be updated soon. However for now, this current repository and its examples reference the two libraries below.
+
+```bash
+pip install 'monza[ml]'
+'''
+
 ```python
 pip install hammadpy>=3.10.1
 pip install hammadml>=0.1.10
