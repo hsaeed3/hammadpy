@@ -5,7 +5,7 @@ The complete library can be installed with the following command; the new GitHub
 
 ```bash
 pip install 'monza[ml]'
-'''
+```
 
 ```python
 pip install hammadpy>=3.10.1
