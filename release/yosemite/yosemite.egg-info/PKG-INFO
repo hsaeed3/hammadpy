@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: yosemite
+Version: 0.0.1
+Summary: yosemite
+Author: Hammad Saeed
+Author-email: hammad@supportvectors.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.9
+Requires-Dist: art
+Requires-Dist: libhammadpy-text
+Requires-Dist: prompt_toolkit
+Requires-Dist: wcwidth
+Provides-Extra: ml
+Requires-Dist: annoy; extra == "ml"
+Requires-Dist: anthropic; extra == "ml"
+Requires-Dist: ebooklib; extra == "ml"
+Requires-Dist: instructor; extra == "ml"
+Requires-Dist: pandas; extra == "ml"
+Requires-Dist: pathlib; extra == "ml"
+Requires-Dist: pdfminer.six; extra == "ml"
+Requires-Dist: PyPDF2; extra == "ml"
+Requires-Dist: sentence-transformers; extra == "ml"
+Requires-Dist: spacy; extra == "ml"
+Requires-Dist: pyspark[sql]; extra == "ml"
+Requires-Dist: Whoosh; extra == "ml"
+
+
+Yosemite
+    

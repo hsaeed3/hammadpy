@@ -1,13 +1,13 @@
 import setuptools
 
 setuptools.setup(
-    name="monza",
+    name="forza",
     version="0.0.1",
     author="Hammad Saeed",
     author_email="hammad@supportvectors.com",
-    description="Hammad's Accelarated Micro Modules for Application Development (Hammad's Python Library)",
+    description="forza",
     long_description="""
-Hammad's Accelarated Micro Modules for Application Development (Hammad's Python Library)
+FORZA
     """,
     packages=setuptools.find_packages(),
     classifiers=[
@@ -21,5 +21,10 @@ Hammad's Accelarated Micro Modules for Application Development (Hammad's Python 
 "libhammadpy-text",
 "prompt_toolkit",
 "wcwidth",
-    ]
+    ],
+    extras_require={
+        'ml' : [
+            'suzuka',
+        ]
+    }
 )
