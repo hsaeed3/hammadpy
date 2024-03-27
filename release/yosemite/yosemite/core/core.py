@@ -1,6 +1,6 @@
-from yosemite.modules.text import Text
-from yosemite.modules.loaders import Status, Timer
-from yosemite.modules.inputs import Input, Dialog
+from yosemite.core.modules.text import Text
+from yosemite.core.modules.loaders import Status, Timer
+from yosemite.core.modules.inputs import Input, Dialog
 
 """
 yosemite.core.core

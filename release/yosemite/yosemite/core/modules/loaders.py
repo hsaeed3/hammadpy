@@ -1,4 +1,4 @@
-from yosemite.modules.text import Text
+from yosemite.core.modules.text import Text
 import threading
 import time
 
