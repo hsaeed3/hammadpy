@@ -2,10 +2,15 @@ import setuptools
 
 setuptools.setup(
     name="yosemite",
-    version="0.0.3",
+    version="0.0.4",
     author="Hammad Saeed",
     author_email="hammad@supportvectors.com",
     description="yosemite",
+    entry_points={
+        'console_scripts': [
+            'yosemite = yosemite.cli:main',
+        ],
+    },
     long_description="""
 Yosemite
     """,

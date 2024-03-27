@@ -1,8 +1,10 @@
 setup.py
 yosemite/__init__.py
+yosemite/cli.py
 yosemite.egg-info/PKG-INFO
 yosemite.egg-info/SOURCES.txt
 yosemite.egg-info/dependency_links.txt
+yosemite.egg-info/entry_points.txt
 yosemite.egg-info/requires.txt
 yosemite.egg-info/top_level.txt
 yosemite/core/__init__.py
@@ -15,7 +17,10 @@ yosemite/core/modules/text.py
 yosemite/ml/__init__.py
 yosemite/ml/data/__init__.py
 yosemite/ml/data/db.py
+yosemite/ml/data/universal.py
 yosemite/ml/data/vdb.py
+yosemite/ml/experimental/__init__.py
+yosemite/ml/experimental/database.py
 yosemite/ml/llms/__init__.py
 yosemite/ml/llms/claude.py
 yosemite/ml/llms/instruct.py
